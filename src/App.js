@@ -6,6 +6,61 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import './App.css';
 
+// slider
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+
+const slideImages = [
+    {
+        url: 'logos/lc.jpg',
+        caption: 'Международный фонд живая классика',
+      },
+      {
+        url: 'logos/fsop.jpg',
+        caption: 'Физкультуре спортивное общество России',
+      },
+      {
+        url: 'logos/osstro.png',
+        caption: 'Агенство Osstro',
+      },
+      {
+        url: 'logos/fsi.jpg',
+        caption: 'Фонд социальных инвестиций',
+      },
+]
+
+
+
+
+const properties = {
+    duration: 3000,
+    autoplay: false,
+    transitionDuration: 500,
+    arrows: false,
+    autoplay: true,
+    infinite: true,
+    easing: "ease", 
+    responsiveSettings: {
+        0: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        },
+        600: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        },
+        1000: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+        },
+        1200: {
+            slidesToShow: 4,
+            slidesToScroll: 4
+        }
+    }
+};
+
+
 const App = () => (
     <>
         <Navbar bg="wight" expand="lg">
@@ -34,8 +89,8 @@ const App = () => (
                         детско - юнешевского<br />
                         предпринимательства
                     </p>
-                    <button className="button1 btn btn-primary border-3 border-dark">Расскажи нам о своём проекте</button>
-                    <button className="button2 btn btn-primary border-0 border-dark">Найди команду в своём регионе</button>
+                    <button className="btn_text button1 btn btn-primary border-3 border-dark">Расскажи нам о своём проекте</button>
+                    <button className="btn_text button2 btn btn-primary border-0 border-dark">Найди команду в своём регионе</button>
                 </div>
                 <div className="right-side">
                     <img src="/main_logo.png" className="App-logo" alt="logo" />
@@ -80,7 +135,19 @@ const App = () => (
                 <div className="About-text">
                     <div className="line">
                         <div className="line-left">
-                            <p>7-9 декобря</p>
+                            <p>1-3 декабря</p>
+                        </div>
+                        <div className="line-right">
+                            <h4>Конгресс молодых учёных</h4>
+                            <p>Федеральная территория "Сириус"</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div className="About-text">
+                    <div className="line">
+                        <div className="line-left">
+                            <p>7-9 декабря</p>
                         </div>
                         <div className="line-right">
                             <h4>Митап в Республике Башкоторстан</h4>
@@ -89,6 +156,19 @@ const App = () => (
                     </div>
                 </div>
                 <hr />
+                <div className="About-text">
+                    <div className="line">
+                        <div className="line-left">
+                            <p>27 декабря</p>
+                        </div>
+                        <div className="line-right">
+                            <h4>Лига Юниор.Таджикистан</h4>
+                            <p>Организатор:  Иван Ивановичь Иванов</p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                
                 <div className="About-text">
                     <div className="line">
                         <div className="line-left">
@@ -160,8 +240,10 @@ const App = () => (
                 <div className="About-uls">
                     <ul>
                         <li>
-                            Экосистема уполномоченных по защите бизнеса:<br />
-                            <span>Через систему уполномоченных мы продвигаем наши инициативы на региональных уровнях.</span>
+                            <div className="About-uls-image">
+                                    Экосистема уполномоченных по защите бизнеса:<br />
+                                    <span>Через систему уполномоченных мы продвигаем наши инициативы на региональных уровнях.</span>
+                            </div>
                         </li>
                         <li>
                             Законодательные инициативы:<br />
@@ -189,6 +271,61 @@ const App = () => (
                     <h4>что бы найти своё сообщество щёлкни на карту</h4>
                 </div>
             </Container>
+        </div>
+
+        <div className="slider">
+            <Container className='slider_container'>
+                <div className='white About-title'>
+                    <h1>Соучредители</h1>
+                </div>
+                
+            <div className="slide-container">
+                <Slide {...properties}>
+                {slideImages.map((slideImage, index)=> (
+                    <div className="each-slide" key={index}> 
+                        <div className="slide-card row">
+                            <div className="slide-card-image">
+                                <img className='slide-card-image' src={slideImage.url} alt='' />
+                            </div>
+                            <div className='slide-card-text'>
+                                <h3>{slideImage.caption}</h3>
+                            </div>
+                        </div>
+                    </div>
+                ))} 
+                </Slide>
+            </div>
+            </Container>
+        </div>
+
+
+        <div className='footer'>
+        <Container>
+            <div className='footer_grid'>
+                <div className='footer-logo'>
+                    <img class="logo_footer" src="/main_logo.png" alt='' />
+                </div>
+            
+                <div className='footer-list .no-marker'>
+                    <ul>
+                        <li><a href="#">СМИ о нас</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Политика</a></li>
+                        <li><a href="#">Конфиденциальность</a></li>
+                    </ul>
+                </div>
+                <div className='footer-list .no-marker'>
+                    <ul>
+                        <li><a href="#">Юр. адресс</a></li>
+                        <li><a href="#">+7 (495) 123-45-67</a></li>
+                        <li><a href="#">+7 (495) 123-45-67</a></li>
+                        <li><a href="#">+mail@test.ru</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </Container>
         </div>
     </>
 );
