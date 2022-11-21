@@ -186,7 +186,7 @@ const App = () => (
                 </div>
                 <div className="About-text">
                     <img src="/map.png" alt='' />
-                    <h4>что бы найти своё сообщество щёлкни на регион на карте</h4>
+                    <h4>что бы найти своё сообщество щёлкни на карту</h4>
                 </div>
             </Container>
         </div>
