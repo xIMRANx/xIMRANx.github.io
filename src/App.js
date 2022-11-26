@@ -13,11 +13,11 @@ import 'react-slideshow-image/dist/styles.css';
 const slideImages = [
     {
         url: 'logos/lc.jpg',
-        caption: 'Международный фонд живая классика',
+        caption: 'Международный фонд \n"Живая классика"',
       },
       {
-        url: 'logos/fsop.jpg',
-        caption: 'Физкультуре спортивное общество России',
+        url: 'logos/fsop.jpeg',
+        caption: 'Физкультурно спортивное общество России',
       },
       {
         url: 'logos/osstro.png',
@@ -30,34 +30,32 @@ const slideImages = [
 ]
 
 
+const responsiveSettings = [
+    {
+        breakpoint: 800,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+    },
+    {
+        breakpoint: 500,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+    }
+];
+
 
 
 const properties = {
-    duration: 3000,
-    autoplay: false,
+    duration: 5000,
     transitionDuration: 500,
-    arrows: false,
-    autoplay: true,
     infinite: true,
-    easing: "ease", 
-    responsiveSettings: {
-        0: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-        },
-        600: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-        },
-        1000: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-        },
-        1200: {
-            slidesToShow: 4,
-            slidesToScroll: 4
-        }
-    }
+    indicators: true,
+    arrows: false,
+    responsive: responsiveSettings
 };
 
 
@@ -86,7 +84,7 @@ const App = () => (
                     <h1 className="App-title">Лига Юниор</h1>
                     <p>
                         Всероссийское движение<br />
-                        детско - юнешевского<br />
+                        детско - юношеского<br />
                         предпринимательства
                     </p>
                     <button className="btn_text button1 btn btn-primary border-3 border-dark">Расскажи нам о своём проекте</button>
@@ -151,7 +149,6 @@ const App = () => (
                         </div>
                         <div className="line-right">
                             <h4>Митап в Республике Башкоторстан</h4>
-                            <p>Организатор:  Иван Ивановичь Иванов</p>
                         </div>
                     </div>
                 </div>
@@ -163,7 +160,6 @@ const App = () => (
                         </div>
                         <div className="line-right">
                             <h4>Лига Юниор.Таджикистан</h4>
-                            <p>Организатор:  Иван Ивановичь Иванов</p>
                         </div>
                     </div>
                 </div>
@@ -176,21 +172,10 @@ const App = () => (
                         </div>
                         <div className="line-right">
                             <h4>Митап в г.Нижний-Новгород</h4>
-                            <p>Организатор:  Иван Ивановичь Иванов</p>
                         </div>
                     </div>
                 </div>
                 <hr />
-                <div className="About-text">
-                    <div className="line">
-                        <div className="line-left">
-                            <p>Февраль</p>
-                        </div>
-                        <div className="line-right">
-                            <h4>Российский инвестиционный форум</h4>
-                        </div>
-                    </div>
-                </div>
             </Container>
         </div>
         <div className="gradient_background">
@@ -247,7 +232,7 @@ const App = () => (
                         </li>
                         <li>
                             Законодательные инициативы:<br />
-                            <span>Законодательная поддержка инициатив развития детско-юношеского предпринимательства в Государственной Думе и Совете Федерации России</span>
+                            <span>Законодательная поддержка инициатив развития детско-юношеского предпринимательства в Государственной Думе и Совете Федерации России.</span>
                         </li>
                         <li>
                             Развитие регионов:<br />
@@ -268,13 +253,13 @@ const App = () => (
                 </div>
                 <div className="About-text">
                     <img src="/map.png" alt='' />
-                    <h4>что бы найти своё сообщество щёлкни на карту</h4>
+                    <h4>чтобы найти своё сообщество щёлкни на карту</h4>
                 </div>
             </Container>
         </div>
 
-        <div className="slider">
-            <Container className='slider_container'>
+        <div className="slider center">
+            <Container className='slider_container center'>
                 <div className='white About-title'>
                     <h1>Соучредители</h1>
                 </div>
@@ -297,36 +282,34 @@ const App = () => (
             </div>
             </Container>
         </div>
-
-
-        <div className='footer'>
-        <Container>
-            <div className='footer_grid'>
-                <div className='footer-logo'>
-                    <img class="logo_footer" src="/main_logo.png" alt='' />
-                </div>
-            
-                <div className='footer-list .no-marker'>
-                    <ul>
-                        <li><a href="#">СМИ о нас</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Политика</a></li>
-                        <li><a href="#">Конфиденциальность</a></li>
-                    </ul>
-                </div>
-                <div className='footer-list .no-marker'>
-                    <ul>
-                        <li><a href="#">Юр. адресс</a></li>
-                        <li><a href="#">+7 (495) 123-45-67</a></li>
-                        <li><a href="#">+7 (495) 123-45-67</a></li>
-                        <li><a href="#">+mail@test.ru</a></li>
-                    </ul>
-                </div>
-
+    
+    <div className='footer'>
+        <Container className='footer-container'>
+            <div className='footer_row'>
+            <div className='footer-logo'>
+                <img className='footer-logo' src="/footer_logo.svg" alt='' />
             </div>
 
+            <div className='footer-urls right_side'>
+                <ul>
+                    <li><a href=''>СМИ о нас</a></li>
+                    <li><a href=''>Новости</a></li>
+                    <li><a href=''>Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+
+            <div className='footer-contact'>
+                <ul>
+                    <li><a href=''>+7 (925) 227-04-14</a></li>
+                    <li><a href=''>main@osstro.ru</a></li>
+                </ul>
+            </div>
+
+            </div>
+            
+
         </Container>
-        </div>
+    </div>
     </>
 );
 
