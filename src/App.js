@@ -27,7 +27,8 @@ const slideImages = [
         url: 'logos/fsi.jpg',
         caption: 'Фонд социальных инвестиций',
       },
-]
+];
+    
 
 
 const responsiveSettings = [
@@ -69,8 +70,8 @@ const App = () => (
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav" className='d-flex justify-content-end'>
                     <Nav className="me-auto justify-content-end d-flex">
-                        <Nav.Link href="#home">Положение</Nav.Link>
-                        <Nav.Link href="#link">Мероприятия</Nav.Link>
+                        <Nav.Link href="/doc1.docx">Положение</Nav.Link>
+                        <Nav.Link href="#events">Мероприятия</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -115,7 +116,7 @@ const App = () => (
         </div>
         
         <div className="white">
-            <Container className="About">
+            <Container className="About" id='events'>
                 <div className="About-title">
                     <h1>МЕРОПРИЯТИЯ</h1>
                 </div>
@@ -159,8 +160,8 @@ const App = () => (
                             <p>27 декабря</p>
                         </div>
                         <div className="line-right">
-                            <h4>Лига Юниор.Таджикистан</h4>
-                        </div>
+                            <h4>Лига Юниор Таджикистан</h4>
+                    line-right
                     </div>
                 </div>
                 <hr />
@@ -176,6 +177,7 @@ const App = () => (
                     </div>
                 </div>
                 <hr />
+            </div>
             </Container>
         </div>
         <div className="gradient_background">
@@ -240,7 +242,7 @@ const App = () => (
                         </li>
                         <li>
                             Продвижение:<br />
-                            <span>Продвижение проектов через профессиональны сообщества и ассоциации, торгово-промышленные палаты, центры «Мой бизнес». Участие проектов юных предпринимателей в ключевых деловых событиях: ПМЭФ, МЭФ, ВЭФ, РИФ и т.д.</span>
+                            <span>Продвижение проектов через профессиональные сообщества и ассоциации, торгово-промышленные палаты, центры «Мой бизнес». Участие проектов юных предпринимателей в ключевых деловых событиях: ПМЭФ, МЭФ, ВЭФ, РИФ и т.д.</span>
                         </li>
                     </ul>
                 </div>
