@@ -17,11 +17,11 @@ const slideImages = [
       },
       {
         url: 'logos/fsop.jpeg',
-        caption: 'Физкультурно спортивное общество России',
+        caption: 'Физкультурно спортивное общество Россия',
       },
       {
         url: 'logos/osstro.png',
-        caption: 'Агенство Osstro',
+        caption: 'Агентство Osstro',
       },
       {
         url: 'logos/fsi.jpg',
@@ -288,10 +288,11 @@ const App = () => (
     <div className='footer'>
         <Container className='footer-container'>
             <div className='footer_row'>
-            <div className='footer-logo'>
-                <img className='footer-logo' src="/footer_logo.svg" alt='' />
-            </div>
 
+                <div className='footer_row-column'>
+                    <img src="/footer_logo.svg" className='footer_logo'alt='' />
+                </div>
+            <div className='footer_row-column'>
             <div className='footer-urls right_side'>
                 <ul>
                     <li><a href=''>СМИ о нас</a></li>
@@ -299,12 +300,15 @@ const App = () => (
                     <li><a href=''>Политика конфиденциальности</a></li>
                 </ul>
             </div>
+            </div>
+            <div className='footer_row-column'>
 
             <div className='footer-contact'>
                 <ul>
                     <li><a href=''>+7 (925) 227-04-14</a></li>
                     <li><a href=''>main@osstro.ru</a></li>
                 </ul>
+            </div>
             </div>
 
             </div>
