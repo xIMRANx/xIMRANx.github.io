@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#FFFFFF">
+</head>
+
+<body>
+  <div class="container">
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <img src="img/photo.jpg" alt="Моя фотография" class="profile-pic">
+      <div style="margin-left: 20px;">
+        <div class="name" >Imran Akhmedov</div>
+        <div class="profession muted_text" id="profession"></div>
+         <div id="icons-container">
+      <div class="icons profession">
+        <a href="https://github.com/ximranx"><img src="img/github-mark-white.svg" alt="Github" class="icon"></a>
+        <a href="https://ximranx.t.me"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Telegram_X_2019_Logo.svg/1024px-Telegram_X_2019_Logo.svg.png?20220403112442" alt="Github" class="icon"></a>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+  <script>
+    // Рандомный выбор профессии
+  const professionEl = document.getElementById('profession');
+  const professions = [
+    'Пишу код 🤖',
+    'Написал, что-то полезное 📝',
+    'Бэкэнд — моя стихия 🔥',
+    'Сервер — мой домен 🖥',
+    'Обработка данных — моя страсть 🤓',
+    'Работаю на стороне сервера ⚙️',
+    'Асинхронность — мой кумир 🏃‍♂️',
+    'Делаю что-то, наверное 🤷‍♂️',
+    'Исправил баг, один из тысяч 🐛',
+    'Работаю над техническим долгом 💻'
+  ];
+  let index = 0;
+  let profession = professions[index];
+
+  function typeWriter() {
+    if (index < profession.length) {
+      professionEl.textContent += profession.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100);
+    } else {
+      setTimeout(() => {
+        professionEl.textContent = '';
+        index = 0;
+        profession = professions[(Math.floor(Math.random() * professions.length))];
+        setTimeout(typeWriter, 0);
+      }, 2000);
+    }
+  }
+  typeWriter();
+
+  </script>
+
+</body>
+
+</html>
